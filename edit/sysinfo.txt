@@ -1,0 +1,23 @@
+echo ----------------------------------------------------------
+    echo "Hostname: $(cat /proc/sys/kernel/hostname)"
+    echo "User: $(get_current_user)"
+    echo "OS: $(get_distro)"
+    echo "Kernel: $(uname -r)"
+    echo "Uptime: $(get_uptime)"
+
+    echo "CPU: $(get_cpu_info)"
+    echo "RAM: $(get_memory_info)"
+    echo "GPU: $(get_gpu_info)"
+    echo "Motherboard: $(get_motherboard)"
+
+    echo "Theme: $(get_theme)"
+    echo "Icons: $(get_icons)"
+    echo "Desktop Environment: $(get_desktop_environment)"
+    echo "Window Manager: $(get_window_manager)"
+
+    echo "Shell: $(get_shell)"
+    echo "Terminal: $(get_terminal)"
+
+    echo "Screen: $(get_screen)"
+    echo "Resolution: $(get_resolution)"
+echo ----------------------------------------------------------
