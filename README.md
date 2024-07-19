@@ -37,14 +37,6 @@ Here is an example of what the output might look like:
 
 [Example](https://imgur.com/a/T0cMa7V)
 
-## Contributing
-
-Feel free to submit issues and pull requests. Contributions are welcome!
-
-## License
-
-This project is licensed under the MIT License.
-
 ---
 
 ## Tutorial
@@ -91,12 +83,11 @@ This project is licensed under the MIT License.
 
    Modify the sysinfo.txt file to customize the system information output.
 
----
 
-## Issues and Contributing
+## Contributing
 
-If you encounter any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
+Feel free to submit issues and pull requests. Contributions are welcome!
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License.
