@@ -35,7 +35,7 @@ You can customize the displayed ASCII logo and system information by editing the
 
 Here is an example of what the output might look like:
 
-![Example Output](https://imgur.com/a/AhBKlf8)
+![Example Output](https://i.imgur.com/TrIvIqj.png)
 
 ## Contributing
 
