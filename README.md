@@ -8,6 +8,11 @@ XenFetch is a lightweight and customizable tool to display system information in
 - Customizable ASCII logos
 - Supports various Linux distributions
 
+## Needed packages
+- coreutils
+- glib2
+- xorg-xrandr
+
 ## Installation
 
 To install XenFetch, download the install script from the releases page and run it:
