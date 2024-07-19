@@ -137,7 +137,7 @@ get_current_user() {
 
 # Function to show ASCII LOGO
 display_logo() {
-    local logo_file="$(dirname "$0")/edit/logo.txt"
+    local logo_file="/usr/local/share/xenfetch/edit/logo.txt"
     if [ -f "$logo_file" ]; then
         cat "$logo_file"
     else
@@ -152,7 +152,7 @@ get_uptime() {
 
 # Show informations about OS
 display_info() {
-    local info_file="$(dirname "$0")/edit/sysinfo.txt"
+    local info_file="/usr/local/share/xenfetch/edit/sysinfo.txt"
     if [ -f "$info_file" ]; then
         source "$info_file"
     else
