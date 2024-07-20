@@ -17,7 +17,7 @@ XenFetch is a lightweight and customizable tool to display system information in
 
 After installation, you can run XenFetch by simply typing:
 
-xenfetch
+xenfetch.sh
 
 ## Customization
 
@@ -57,7 +57,7 @@ Here is an example of what the output might look like:
 
    After installation, you can display your system information by running:
 
-   xenfetch
+   xenfetch.sh
 
 ### Customizing XenFetch
 
