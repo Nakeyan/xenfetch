@@ -13,14 +13,6 @@ XenFetch is a lightweight and customizable tool to display system information in
 - glib2
 - xorg-xrandr
 
-## Installation
-
-To install XenFetch, download the install script from the releases page and run it:
-
-wget https://github.com/Nakeyan/xenfetch/releases/download/install/install.sh
-chmod +x install.sh
-./install.sh
-
 ## Usage
 
 After installation, you can run XenFetch by simply typing:
