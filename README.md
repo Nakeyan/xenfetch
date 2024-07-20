@@ -73,7 +73,7 @@ Here is an example of what the output might look like:
 
    The configuration files for customization are located in:
 
-   /usr/local/share/xenfetch/edit
+   /usr/local/bin/xenfetch/edit
 
 2. **Edit logo.txt**
 
