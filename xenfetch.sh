@@ -22,13 +22,18 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+# ANSI color codes
+MAGENTA='\033[1;35m'
+YELLOW='\033[1;33m'
+RESET='\033[0m'
+
 # Function to download information about Distribution
 get_distro() {
     if [ -f /etc/os-release ]; then
         . /etc/os-release
-        echo $PRETTY_NAME
+        echo -e "${YELLOW}$PRETTY_NAME${RESET}"
     else
-        uname -s
+        echo -e "${YELLOW}$(uname -s)${RESET}"
     fi
 }
 
@@ -37,7 +42,7 @@ get_cpu_info() {
     local model_name=$(awk -F: '/model name/ {print $2; exit}' /proc/cpuinfo | sed 's/^[ \t]*//')
     local cores=$(grep -c ^processor /proc/cpuinfo)
     local freq=$(awk -F: '/cpu MHz/ {print $2; exit}' /proc/cpuinfo | sed 's/^[ \t]*//')
-    echo "$model_name ($cores cores @ $freq MHz)"
+    echo -e "${YELLOW}$model_name ($cores cores @ $freq MHz)${RESET}"
 }
 
 # Function to download information about Memory(RAM)
@@ -45,22 +50,22 @@ get_memory_info() {
     local mem_total=$(awk '/MemTotal/ {print $2}' /proc/meminfo)
     local mem_free=$(awk '/MemAvailable/ {print $2}' /proc/meminfo)
     local mem_used=$((mem_total - mem_free))
-    echo "$(awk "BEGIN {print $mem_used / 1024 / 1024}") GB / $(awk "BEGIN {print $mem_total / 1024 / 1024}") GB"
+    echo -e "${YELLOW}$(awk "BEGIN {print $mem_used / 1024 / 1024}") GB / $(awk "BEGIN {print $mem_total / 1024 / 1024}") GB${RESET}"
 }
 
 # Function to download information about GPU
 get_gpu_info() {
     local gpu_info=$(lspci 2>/dev/null | grep -i 'vga\|3d\|2d' | cut -d: -f3 | sed 's/^[ \t]*//')
-    echo "${gpu_info:-N/A}"
+    echo -e "${YELLOW}${gpu_info:-N/A}${RESET}"
 }
 
 # Function to download information about theme
 get_theme() {
     if command -v gsettings &> /dev/null; then
         local theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
-        echo "${theme//\'}"
+        echo -e "${YELLOW}${theme//\'}${RESET}"
     else
-        echo "N/A"
+        echo -e "${YELLOW}N/A${RESET}"
     fi
 }
 
@@ -68,40 +73,40 @@ get_theme() {
 get_icons() {
     if command -v gsettings &> /dev/null; then
         local icons=$(gsettings get org.gnome.desktop.interface icon-theme)
-        echo "${icons//\'}"
+        echo -e "${YELLOW}${icons//\'}${RESET}"
     else
-        echo "N/A"
+        echo -e "${YELLOW}N/A${RESET}"
     fi
 }
 
 # Function to download information about Desktop Environment
 get_desktop_environment() {
-    echo "${XDG_CURRENT_DESKTOP:-Unknown}"
+    echo -e "${YELLOW}${XDG_CURRENT_DESKTOP:-Unknown}${RESET}"
 }
 
 # Function to download information about Window Manager
 get_window_manager() {
-    echo "${XDG_SESSION_TYPE:-Unknown}"
+    echo -e "${YELLOW}${XDG_SESSION_TYPE:-Unknown}${RESET}"
 }
 
 # Function to download information about Terminal
 get_shell() {
     local parent_pid=$(ps -o ppid= -p $$)
     local terminal=$(ps -o comm= -p $parent_pid | tail -n 1)
-    echo "${terminal:-N/A}"
+    echo -e "${YELLOW}${terminal:-N/A}${RESET}"
 }
 
 # Function to download information about Motherboard
 get_motherboard() {
     local product_name=$(cat /sys/class/dmi/id/board_name 2>/dev/null)
     local manufacturer=$(cat /sys/class/dmi/id/board_vendor 2>/dev/null)
-    echo "${manufacturer:-N/A} - ${product_name:-N/A}"
+    echo -e "${YELLOW}${manufacturer:-N/A} - ${product_name:-N/A}${RESET}"
 }
 
 # Function to download information about Screen
 get_screen() {
     local screen=$(xrandr --listmonitors | grep '\*' | awk '{print $4}')
-    echo "${screen:-N/A}"
+    echo -e "${YELLOW}${screen:-N/A}${RESET}"
 }
 
 # Function to download information about Shell
@@ -113,7 +118,7 @@ get_terminal() {
 
         case $terminal in
             gnome-terminal*|konsole|xterm|urxvt|alacritty|lxterminal|terminator|tilix)
-                echo "$terminal"
+                echo -e "${YELLOW}$terminal${RESET}"
                 return
                 ;;
         esac
@@ -121,18 +126,18 @@ get_terminal() {
         current_pid=$parent_pid
     done
 
-    echo "Unknown"
+    echo -e "${YELLOW}Unknown${RESET}"
 }
 
 # Function to download information about Resolution
 get_resolution() {
     local resolution=$(xrandr | grep '*' | awk '{print $1}')
-    echo "${resolution:-N/A}"
+    echo -e "${YELLOW}${resolution:-N/A}${RESET}"
 }
 
 # Function to download information about Current User
 get_current_user() {
-    echo "$USER"
+    echo -e "${YELLOW}$USER${RESET}"
 }
 
 # Function to show ASCII LOGO
@@ -147,7 +152,7 @@ display_logo() {
 
 # Function to download UPTIME informations
 get_uptime() {
-    uptime -p
+    echo -e "${YELLOW}$(uptime -p)${RESET}"
 }
 
 # Show informations about OS
