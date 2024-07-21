@@ -1,8 +1,8 @@
 echo ----------------------------------------------------------
-echo -e "${MAGENTA}Hostname:${RESET} $(cat /proc/sys/kernel/hostname)"
+echo -e "${MAGENTA}Hostname:${YELLOW} $(cat /proc/sys/kernel/hostname)"
 echo -e "${MAGENTA}User:${RESET} $(get_current_user)"
 echo -e "${MAGENTA}OS:${RESET} $(get_distro)"
-echo -e "${MAGENTA}Kernel:${RESET} $(uname -r)"
+echo -e "${MAGENTA}Kernel:${YELLOW} $(uname -r)"
 echo -e "${MAGENTA}Uptime:${RESET} $(get_uptime)"
 
 echo -e "${MAGENTA}CPU:${RESET} $(get_cpu_info)"
