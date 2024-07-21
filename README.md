@@ -45,7 +45,7 @@ Here is an example of what the output might look like:
 
    Change the permissions of the script to make it executable:
 
-   chmod +x install.sh
+   chmod +x install.sh 
 
 3. **Run the Installer**
 
@@ -57,7 +57,7 @@ Here is an example of what the output might look like:
 
    After installation, you can display your system information by running:
 
-   xenfetch.sh
+   xenfetch
 
 ### Customizing XenFetch
 
