@@ -17,11 +17,11 @@ XenFetch is a lightweight and customizable tool to display system information in
 
 After installation, you can run XenFetch by simply typing:
 
-xenfetch.sh
+xenfetch
 
 ## Customization
 
-You can customize the displayed ASCII logo and system information by editing the configuration files located in /usr/local/share/xenfetch/edit.
+You can customize the displayed ASCII logo and system information by editing the configuration files located in /usr/local/bin/edit.
 
 ## Example Output
 
