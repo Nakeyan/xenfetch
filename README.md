@@ -45,7 +45,7 @@ Here is an example of what the output might look like:
 
    Change the permissions of the script to make it executable:
 
-   chmod +x install.sh 
+   chmod +x install.sh or use " chmod 755 install.sh " - if don't work
 
 3. **Run the Installer**
 
