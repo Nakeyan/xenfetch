@@ -27,7 +27,7 @@ You can customize the displayed ASCII logo and system information by editing the
 
 Here is an example of what the output might look like:
 
-[Example](https://imgur.com/a/T0cMa7V)
+[Example](https://imgur.com/a/new-xenfetch-example-img-J660yeZ)
 
 ---
 
