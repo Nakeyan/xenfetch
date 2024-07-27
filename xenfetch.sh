@@ -117,7 +117,7 @@ get_terminal() {
         local terminal=$(ps -o comm= -p $parent_pid)
 
         case $terminal in
-            gnome-terminal*|konsole|xterm|urxvt|alacritty|lxterminal|terminator|tilix)
+            gnome-terminal*|konsole|xterm|urxvt|alacritty|lxterminal|terminator|tilix|xfce4-terminal)
                 echo -e "${YELLOW}$terminal${RESET}"
                 return
                 ;;
