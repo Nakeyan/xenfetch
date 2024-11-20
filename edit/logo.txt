@@ -4,5 +4,5 @@ __  __            ___    _       _
  /  \  __/ | | / / |  __/ || (__| | | |
 /_/\_\___|_| |_\/   \___|\__\___|_| |_|
 
-Maked by: Nakeyan
-License: MIT
+Made by nakeyan
+Licensed by MIT
